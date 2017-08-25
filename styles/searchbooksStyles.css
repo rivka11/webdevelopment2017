@@ -1,0 +1,8 @@
+ul.books li {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+    padding: 10px;
+}

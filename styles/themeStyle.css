@@ -1,0 +1,121 @@
+
+#logo {
+  height: 100px;
+  vertical-align: middle;
+}
+
+.tbtitle {
+    text-align: center;
+   display: inline-block;
+   
+    
+}
+header {
+    margin-top: 10px;
+	width: 100%; 
+	
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: gainsboro;
+ 
+}
+
+/*navigation bar styles */ 
+.nav ul {
+  list-style: none;
+  background-color: #005f5f;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  
+}
+
+ .nav li {
+    width: 150px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+   
+  }
+
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+ 
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #888;
+}
+
+
+ 
+.logo
+{   
+    background-image: url('tblogo.PNG');
+    background-repeat: no-repeat;
+    background-position: 50% 5px;
+    background-size: 65px;
+}
+ 
+.mainSearch {
+    text-align: center;
+}
+.searchBtn {
+     position: absolute;
+    top: 50%;
+}
+
+ #inner {
+  display: table;
+  margin: 0 auto;
+  }
+  
+  .inner {
+       background-color:  #005f5f;
+       width: 500px; 
+       border-radius: 15px;
+  }
+ 
+ #space {
+     height: 100px;
+     
+ }
+ 
+ .bigsearch {
+     border-radius: 5px;
+     border-color:  #005f5f;
+     height: 30px;
+     width: 500px;
+     font-size: 1.5em;
+ }
+ .searchbtn {
+     width: 50px;
+     height:30px;
+     background-image: url("http://www.freeiconspng.com/uploads/search-icon-png-2.png");
+     background-repeat: no-repeat;
+     background-size: 25px;
+ }
+ 
+ .button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color:  #fff;
+  color: #333333;  
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
