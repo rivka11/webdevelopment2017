@@ -41,7 +41,7 @@ else {
             <br>
             <br>
             <label>Notes:</label>
-            <textarea name = "notes" rows ="2" cols="50" placeholder="enter question here"></textarea>
+            <textarea name = "notes" rows ="2" cols="50" placeholder="enter information here (ie. book condition)"></textarea>
             <br>
             <br>
                       

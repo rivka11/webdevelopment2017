@@ -4,7 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.sticky.js"></script>
 
-<link rel="stylesheet" href= "styles/themeStyle.css">
+<link rel="stylesheet" href= "styles/themeStyle.css"/>
 <script>
   $(document).ready(function(){
     $("#sticker").sticky({topSpacing:0});
