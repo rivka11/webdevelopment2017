@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+if (session_status() != PHP_SESSION_ACTIVE){
+    session_start();
+}
+
+?>
+    <!DOCTYPE html>
 <html>
 <head> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,8 +27,11 @@
       </a>
    <h1 class = "tbtitle"> Touro Textbook Gemach</h1>
         </header>
-  </header>
-        <div class="nav" id="sticker">
+       
+       
+     
+       
+   <div class="nav" id="sticker">
       <ul>
         <li class="logo"><a href="index.php"></a></li>
         <li id = "navli"><a  href="index.php">Home</a></li>
@@ -31,7 +40,14 @@
         <li id = "navli"><a href="searchBooks.php">Search Books</a></li>
         <li id = "navli"><a href="about.php">About</a></li>
         <li id = "navli"><a href="contact.php">Contact</a></li>
-         <li id = "navli"><a href="signIn.php">Sign in</a></li>
+        <?php
+        if(isset($_SESSION['user'])){
+            echo ' <li id = "navli"><a href="signOut.php">Sign Out</a></li>';
+        }
+        else{
+            echo ' <li id = "navli"><a href="signIn.php">Sign in</a></li>';
+        }
+        ?>
          <li id = "navli"><a href="addBook.php">add book</a></li>
       </ul>
     </div>

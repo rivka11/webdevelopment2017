@@ -31,10 +31,6 @@
         </form>
             </div>
             
-            <?php
-            echo phpinfo();
-            echo $_SERVER['DOCUMENT_ROOT'];
-            ?>
             <br>
     </div>
     </div>

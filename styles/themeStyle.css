@@ -23,6 +23,18 @@ body {
  
 }
 
+label {
+    color: #fff;
+}
+
+form {
+	line-height: 1em;
+}
+
+input {
+    /*display:inline-block;*/
+   
+}
 /*navigation bar styles */ 
 .nav ul {
   list-style: none;
@@ -32,6 +44,9 @@ body {
   margin: 0;
   
 }
+
+
+
 
  .nav li {
     width: 150px;

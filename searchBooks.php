@@ -117,11 +117,6 @@ if (isset($_POST['search'])) {
 </body>
 
 
-<footer>
-   <?php
-include("footer.php");
-?>
-</footer>
 
 
 </html>
