@@ -33,7 +33,7 @@ if (session_status() != PHP_SESSION_ACTIVE){
       <ul class="navul">
 <!--        <li><a href="index.php"></a></li>-->
         <li id = "navli"><a  href="index.php">Home</a></li>
-        <li id = "navli"><a href="signUp.php">Sell Book</a></li>
+        <li id = "navli"><a href="signUp.php">Sign Up</a></li>
         <li id = "navli"><a href="buyBook.php">Buy Book</a></li>
         <li id = "navli"><a href="searchBooks.php">Search Books</a></li>
         <li id = "navli"><a href="about.php">About</a></li>
@@ -46,7 +46,7 @@ if (session_status() != PHP_SESSION_ACTIVE){
             echo ' <li id = "navli"><a href="signIn.php">Sign in</a></li>';
         }
         ?>
-         <li id = "navli"><a href="addBook.php">add book</a></li>
+         <li id = "navli"><a href="addBook.php">Add Book</a></li>
       </ul>
     </div>
 

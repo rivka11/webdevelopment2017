@@ -1,4 +1,24 @@
+html, body, form, fieldset, table, tr, td, img {
+    margin: 0;
+    padding: 0;
+    font: 100%/150% Georgia, Times, "Times New Roman", serif;;
+}
 
+input, button, select, textarea, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: #42C0FB;
+   
+}
+a:hover{
+    color:deeppink;
+}
 #logo {
  display: block;
     margin: auto;
@@ -69,11 +89,6 @@ ul {
   
 }
 
-
-
-
-
-
  .nav li {
     width: 150px;
     border-bottom: none;
@@ -128,6 +143,13 @@ ul {
        width: 500px; 
        border-radius: 15px;
   }
+  
+  .index{
+       background-color:  #005f5f;
+       width: 70%; 
+       border-radius: 15px;
+  
+  }
  
  #space {
      height: 100px;
@@ -150,11 +172,11 @@ ul {
  }
  
  .button {
-  font: bold 11px Arial;
+/*  font: bold 11px Arial;*/
   text-decoration: none;
   background-color:  #fff;
   color: #333333;  
-  padding: 2px 6px 2px 6px;
+  padding: 4px 6px 4px 6px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;

@@ -29,9 +29,13 @@ foreach($rqrd as $field) {
 /*********
  * user already exists with given email --not unique error!
  * *****************/
+    //Check if user exists with that email address
+    require 'dbConnection.php';
+$useremail = $_POST['email'];
+
+    
 
 //now we are ready to insert into database
-require 'dbConnection.php';
 
 $fname = $_POST['fname'];
 $lname =$_POST['lname'];

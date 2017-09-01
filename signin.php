@@ -1,4 +1,6 @@
 <?php
+session_set_cookie_params(0);//should destroy session when browser is closed, appears to work
+//TODO user should be signed out on browser close
 session_start();
 ?>
 <!DOCTYPE html>

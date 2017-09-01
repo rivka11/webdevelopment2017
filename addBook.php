@@ -49,7 +49,7 @@ else {
             <input type="file" name="fileToUpload" id="fileToUpload">
             <br>
             <br>
-            <input type="submit" value="Upload Image" name="submit">
+            <input type="submit" value="Add Book" name="submit">
 
         </form>
                 <label class="error"> <?php echo $rsn;?> </label>
@@ -57,10 +57,6 @@ else {
             <br>
     </div>
     </div>
-      <img src ="./images/books/searchIcon.png" />
+     
 </body>
-<footer>
-    <?php
-    include 'footer.php';
-    ?>
-</footer>
+

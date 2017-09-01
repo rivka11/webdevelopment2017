@@ -10,13 +10,15 @@
   <div id ="space"> </div>
   
  
-
-<div style="width:100%">
-  <div id="inner">
-      <label> Thank you. Your email has been sent! </label>
-   
-  </div>
-</div>
+ <div style="width:100%;">
+        <div id="inner" class="inner">
+            <br>
+            <div id="inner">
+                <h1>Thank You!</h1>
+                <label> Your email has been sent</label>
+            </div>
+            <br>
+    </div>
   
  
     
@@ -24,6 +26,6 @@
 
 </body>
 <footer>
-   <?php include("footer.php"); ?>
+   <?php //include("footer.php"); ?>
 </footer>
 </html>

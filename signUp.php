@@ -73,15 +73,18 @@
 
             ?>
       </select>
+               <br>
                <br>  
-               <label><b>Password</b></label>
+               <label>Password</label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <br>
-      <label><b>Repeat Password</b></label>
+      <br>
+      <label>Repeat Password</label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <br>
       
       
-               <p>By creating an account you agree to our <a href="termsprivacy.php">Terms & Privacy</a>.</p>
+      <p><label>By creating an account you agree to our <a href="termsprivacy.php">Terms & Privacy</a>.</label></p>
       
       
       
