@@ -41,13 +41,13 @@ if (session_status() != PHP_SESSION_ACTIVE){
 <!--        <li id = "navli"><a href="buyBook.php">Buy Book</a></li>-->
 
        <!--code below modified from w3school dropdown menu link is in css code javascript:void(0) means page wont reload on click the unbutton button-->
-<li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Search Books</a>
-    <div class="dropdown-content">
-        <a href="searchBooks.php">Search Books</a>
-      <a href="myAddedBooks.php">View My Books</a>
-     </div>
-  </li>
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Search Books</a>
+        <div class="dropdown-content">
+            <a href="searchBooks.php">Search Books</a>
+          <a href="myAddedBooks.php">View My Books</a>
+         </div>
+      </li>
   
   
 <!--        <li id = "navli"><a href="searchBooks.php">Search Books</a></li>-->
@@ -58,7 +58,8 @@ if (session_status() != PHP_SESSION_ACTIVE){
         if(isset($_SESSION['user'])){
 //            echo $_SESSION['user'];
             echo '<li id = "navli"><a href="signOut.php">Sign Out</a></li>';
-            echo '<li id = "navli"><a href="myAddedBooks.php">My Books</a></li>';
+            //dont add thingsto nav its not common
+//            echo '<li id = "navli"><a href="myAddedBooks.php">My Books</a></li>';
         }
         else{
             echo '<li id = "navli"><a href="signIn.php">Sign in</a></li>';

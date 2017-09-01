@@ -34,7 +34,7 @@ $useremail = $_SESSION['user'];
 
    echo "<h1> Hello ".$_SESSION['username']."!</h1>";
     //get selected books from the db
-    $stmt = mysqli_prepare($conn, "SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` FROM `book` "
+    $stmt = mysqli_prepare($conn, "SELECT `Seller_BookID`, `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` FROM `book` "
             . "inner join `seller_book` on book.isbn = seller_book.bookisbn "
             . "inner join seller on seller_book.SellerID = seller.userID "
             . "where seller.email = ?") or die(mysqli_error($conn));
@@ -59,6 +59,8 @@ $useremail = $_SESSION['user'];
        
           <form method="post" action="deleteBook.php">
          <input type="hidden" name="seller" value='.$row["sellerID"].'>
+         <input type="hidden" name="bookisbn" value='.$row["ISBN"].'>
+         <input type="hidden" name="seller_book_id" value='.$row["Seller_BookID"].'>
           <input type="submit" value="Remove" />
         </form>
       </li>';
