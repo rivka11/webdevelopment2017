@@ -21,9 +21,11 @@ foreach($rqrd as $field) {
          }
          
      //if contactmethod is email check that it's valid
-         if (!filter_var($_POST['prefcontact'], FILTER_VALIDATE_EMAIL)){
+    elseif ($_POST['prefcontact'] === 'Email') {
+         if (!filter_var($_POST['contactinfo'], FILTER_VALIDATE_EMAIL)){
                  die(header("location:signUp.php?loginFailed=true&reason=invalid_email"));
              }
+            }
          
          
     
@@ -92,7 +94,7 @@ if(mysqli_stmt_execute($sql)){
          $_SESSION['user'] = $email;
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
-          die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn".$filepath));
+          die(header("location:myAddedBooks.php?"));
 
         }else{
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);

@@ -46,6 +46,10 @@ $useremail = $_SESSION['user'];
     mysqli_stmt_execute($stmt);
    $result = mysqli_stmt_get_result($stmt);
    
+   if(mysqli_num_rows($result)==0){
+       echo '<h4>You do not have any open books.</h4>';
+   }
+   
     while($row = mysqli_fetch_array($result)){
        echo '<li>
         

@@ -6,15 +6,15 @@
 
 </head>
 <body>
-  
-  <div id ="space"> </div>
-  
  
-
-<div style="width:100%">
-  <div id="inner">
-      <label> Thank you. Your book has been added! </label>
-      <label> title: <?php if(isset($_GET['title'])){
+      <div id ="space"> </div>
+    
+    <div style="width:100%;">
+        <div id="inner" class="inner">
+            <br>
+            <div id="inner">
+                <h2>Your book has been added!</h2>
+                <label> title: <?php if(isset($_GET['title'])){
           echo $_GET['title'];
                   
           }?> </label>
@@ -23,18 +23,19 @@
           echo $_GET['isbn'];
                   
           }?> </label>
-      
-    
-   
-  </div>
-</div>
+            </div>
+            <br>
+    </div>
+    </div>
+ 
+</body>
   
  
     
 </body>
 
 </body>
-<footer>
-   <?php include("footer.php"); ?>
-</footer>
+<!--<footer>
+   <?php //include("footer.php"); ?>
+</footer>-->
 </html>

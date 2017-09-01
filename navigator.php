@@ -7,7 +7,7 @@ if (session_status() != PHP_SESSION_ACTIVE){
     <!DOCTYPE html>
 <html>
 <head> 
-    <title>My site</title>
+    <title>Touro Textbook Gemach</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.sticky.js"></script>
 
@@ -39,7 +39,8 @@ if (session_status() != PHP_SESSION_ACTIVE){
         <li id = "navli"><a  href="index.php">Home</a></li>
         <li id = "navli"><a href="signUp.php">Sign Up</a></li>
 <!--        <li id = "navli"><a href="buyBook.php">Buy Book</a></li>-->
-       
+
+       <!--code below modified from w3school dropdown menu link is in css code javascript:void(0) means page wont reload on click the unbutton button-->
 <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Search Books</a>
     <div class="dropdown-content">
