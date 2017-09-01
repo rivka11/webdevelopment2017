@@ -92,11 +92,11 @@ if (isset($_POST['search'])) {
             //  <div class="cta"><a href="">Call to action!</a></div>
             //   </li>';
             echo '<li>
-          <a href="#">
+         
          <img src="' . $row['imageurl'] . '" height =200px; width=200px;>
             <h4> Title:' . $row['Title'] . '</h4>
           <p> ISBN: ' . $row['ISBN'] . '</p>
-        </a>
+        
           <form method="post" action="buyBook.php">
          <input type="hidden" name="seller" value='.$row["sellerID"].'>
          <input type="submit" value="Connect!" />

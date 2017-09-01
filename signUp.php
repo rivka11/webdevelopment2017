@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<?php include("navigator.php"); ?>
+<?php  
+session_start();
+if(isset($_SESSION['loggedIn'])){
+    //already signed in Cant sign up!
+    
+    //redirect to give user option
+     //  die(header("location:signOutRedirect.php"));
+    
+       //sign out user
+     
+session_unset();
+session_destroy();
+
+}
+
+include("navigator.php");
+
+?>
 <body>
       <div id ="space"> </div>   
       <div id="inner" class="inner">
           <div id="inner">
             <br>
             <?php
+            $possibleReasons = array("empty_field" => "all field must be completed", "password"=>"invalid sign in", "userexists"=>"A user with that email already exists", "invalid_phone" => "Phone should be 10 digits", "invalid_email" => "Invalid email address");
             if(isset($_GET['loginFailed'])){
-                echo ' error'.$_GET['reason'];
+                  $myreason = $possibleReasons[$_GET['reason']];      
+               echo '<div style=color:red;"> error: '.$myreason."<div>";
             }
             
             ?>
@@ -55,7 +74,7 @@
             <br>
             <br>
             
-               <label><b>Campus</b></label>
+               <label>Campus</label>
         <select class="form-dropdown" style="width:150px" id="input_5" name="campus">*
              <option selected disabled hidden>choose</option>
             <?php
@@ -76,11 +95,11 @@
                <br>
                <br>  
                <label>Password</label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>*
       <br>
       <br>
       <label>Repeat Password</label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>*
       <br>
       
       

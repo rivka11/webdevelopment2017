@@ -19,6 +19,13 @@ foreach($rqrd as $field) {
                  die(header("location:signUp.php?loginFailed=true&reason=invalid_phone"));
              }
          }
+         
+     //if contactmethod is email check that it's valid
+         if (!filter_var($_POST['prefcontact'], FILTER_VALIDATE_EMAIL)){
+                 die(header("location:signUp.php?loginFailed=true&reason=invalid_email"));
+             }
+         
+         
     
     
     //check passwords match
@@ -32,7 +39,18 @@ foreach($rqrd as $field) {
     //Check if user exists with that email address
     require 'dbConnection.php';
 $useremail = $_POST['email'];
+ $stmt = mysqli_prepare($conn, "SELECT `email` FROM `seller` WHERE `email` = ?");
 
+ mysqli_stmt_bind_param($stmt, 's', $useremail);
+
+ mysqli_stmt_execute($stmt);
+ 
+ $result = mysqli_stmt_get_result($stmt); //we know there can only be one result looping is weird
+ 
+ if(mysqli_num_rows($result)!=0){
+     //user with that email already signed up 
+      die(header("location:signUp.php?loginFailed=true&reason=userexists"));
+ }
     
 
 //now we are ready to insert into database
@@ -70,7 +88,10 @@ mysqli_stmt_bind_param($sql, 'ssiisisss',$fname, $lname, $one, $one, $email, $on
 
 
 if(mysqli_stmt_execute($sql)){
-    
+        session_start(); 
+         $_SESSION['user'] = $email;
+         $_SESSION['loggedIn'] =1;
+         $_SESSION['username'] = $uname;
           die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn".$filepath));
 
         }else{

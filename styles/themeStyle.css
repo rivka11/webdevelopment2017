@@ -193,6 +193,13 @@ ul {
     
     
 }
+.circle:hover{
+    margin: -4px;
+     border-style: solid;
+    border-width: medium;
+    border-color: deeppink;
+   
+}
 footer{
 background-color:#005f5f;
 background-image: url("../images/footer.png");
