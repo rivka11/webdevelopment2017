@@ -1,7 +1,4 @@
 <?php 
- 
- 
- 
  if(!empty($_POST)){
     //check if anything is incomplete
     $rqrd = array('email', 'psw');

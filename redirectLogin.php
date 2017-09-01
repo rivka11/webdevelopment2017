@@ -2,7 +2,7 @@
 <?php include("navigator.php"); 
 if(isset($_GET['reason'])){
     if($_GET['reason']=='not_logged_in'){
-    $mesg = 'You need to be logged in to add a book';
+    $mesg = 'Login is required';
     }
 }
 else{
