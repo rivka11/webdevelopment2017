@@ -23,17 +23,15 @@ if (session_status() != PHP_SESSION_ACTIVE){
    <body >
   <header>
       <a href="index.php">
-       <img id="logo" src="tblogo.PNG" alt="logo">
+          <img id="logo" src="images/logoburned.png" alt="logo">
       </a>
-   <h1 class = "tbtitle"> Touro Textbook Gemach</h1>
+  
         </header>
        
        
-     
-       
    <div class="nav" id="sticker">
-      <ul>
-        <li class="logo"><a href="index.php"></a></li>
+      <ul class="navul">
+<!--        <li><a href="index.php"></a></li>-->
         <li id = "navli"><a  href="index.php">Home</a></li>
         <li id = "navli"><a href="signUp.php">Sell Book</a></li>
         <li id = "navli"><a href="buyBook.php">Buy Book</a></li>

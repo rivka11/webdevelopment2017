@@ -17,7 +17,7 @@ include("navigator.php");
   <div id="inner">
       <form action="#" method="post">
       <input class="bigsearch" name = "search" type="text" placeholder="enter book title or ISBN"  /> 
-      <input type="image"  src="searchIcon.png" width="25" height="25" alt="Submit">
+      <input type="image"  src="images/search-9-64.png" width="25" height="25" alt="Submit">
              
        <br>
      
@@ -116,7 +116,9 @@ if (isset($_POST['search'])) {
 
 </body>
 
-
+<footer>
+    
+</footer>
 
 
 </html>

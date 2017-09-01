@@ -1,7 +1,9 @@
 
 #logo {
-  height: 100px;
-  vertical-align: middle;
+ display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
 }
 
 .tbtitle {
@@ -19,7 +21,11 @@ header {
 body {
   margin: 0;
   padding: 0;
-  background: gainsboro;
+  background-color: gainsboro;
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
  
 }
 
@@ -28,7 +34,7 @@ label {
 }
 
 form {
-	line-height: 1em;
+    line-height: 1em;
 }
 
 input {
@@ -36,7 +42,7 @@ input {
    
 }
 /*navigation bar styles */ 
-.nav ul {
+.navul {
   list-style: none;
   background-color: #005f5f;
   text-align: center;
@@ -44,6 +50,26 @@ input {
   margin: 0;
   
 }
+ul {
+  list-style: none;
+  
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.main{
+  list-style:  none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  width: 100%;
+  
+}
+
+
 
 
 
@@ -133,4 +159,26 @@ input {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+}
+
+/*homepage circle */
+.circle {
+    border-radius: 15%;
+    background-color: #005f5f;
+    height: 250px;
+    width: 250px;
+    float:  right;
+    
+    
+}
+footer{
+background-color:#005f5f;
+background-image: url("../images/footer.png");
+background-repeat: no-repeat;
+background-size: 100%;
+margin:0;
+padding:0;
+width:100%;
+height:100px;
+
 }
