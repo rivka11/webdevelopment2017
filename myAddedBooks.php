@@ -16,7 +16,7 @@ $useremail = $_SESSION['user'];
 </head>
 <body>
   
-  <div id ="space"> </div>
+ 
   
  
 
@@ -49,11 +49,22 @@ $useremail = $_SESSION['user'];
    if(mysqli_num_rows($result)==0){
        echo '<h4>You do not have any open books.</h4>';
    }
-   
+   echo  '<div> <ul>';
     while($row = mysqli_fetch_array($result)){
+        if($row['Edition']==0){
+            $edition = "N/A";
+        }
+        else{
+            $edition = $row['Edition'];
+        }
        echo '<li>
         
+        <figure>
          <img src="' . $row['imageurl'] . '" height =200px; width=200px;>
+             <figcaption>Edition: '.$edition.
+             
+             '<br>'.$row['Notes'].'</figcaption>
+         </figure>
             <h4> Title:' . $row['Title'] . '</h4>
           <p> ISBN: ' . $row['ISBN'] . '</p>
        
@@ -66,7 +77,7 @@ $useremail = $_SESSION['user'];
       </li>';
     }
     
-
+ echo  '</ul> </div>';
 //    $result = mysqli_query($conn, $sql); 
 //    
 //

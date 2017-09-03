@@ -1,7 +1,7 @@
 <?php
 session_set_cookie_params(0);//should destroy session when browser is closed, appears to work
 //TODO user should be signed out on browser close
-session_start();
+//session_start();
 ?>
 <!DOCTYPE html>
 <?php include("navigator.php"); 
@@ -10,8 +10,11 @@ session_start();
    
       <div id ="space"> </div>
        <?php
-    if(isset($_GET['LoginFailed'])){
-    echo $_GET['reason'];
+    if(isset($_GET['loginFailed'])){
+    $er = $_GET['reason'];
+}
+else{
+    $er ='';
 }
     ?>
     <div style="width:100%;">
@@ -20,17 +23,20 @@ session_start();
             <div id="inner">
                 <form method="post" action="validateUser.php">
             <label>enter email</label>
-            <input type ="text" name="email"/>
+            <input type ="text" name="email" required="true"/>*
             <br>
             <br>
             <label>enter password</label>
-            <input type ="password" name="psw"/>
+            <input type ="password" name="psw" required="true"/>*
             
             <br>
             <br>
             <input type ="submit" value="sign in"/>
             
         </form>
+                <label style="color:red;">
+                    <?php echo $er; ?>
+                </label>
             </div>
             <br>
     </div>

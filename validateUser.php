@@ -27,6 +27,9 @@ foreach($rqrd as $field) {
     $pw = NULL;
     mysqli_stmt_execute($stmt);
    $result = mysqli_stmt_get_result($stmt);
+   if(mysqli_num_rows($result)==0){
+         die(header("location:signin.php?loginFailed=true&reason=invalidsignin"));
+   }
    while($row = mysqli_fetch_assoc($result)) {
    $pw = $row['password'];
    $uname = $row['userName'];
@@ -40,6 +43,8 @@ foreach($rqrd as $field) {
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
          die(header("location:myAddedBooks.php?loginFailed=false"));
+    } else{
+            die(header("location:signin.php?loginFailed=true&reason=invalidpw"));
     }
 
     }

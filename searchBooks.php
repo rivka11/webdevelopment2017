@@ -1,104 +1,133 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-<?php
-include("navigator.php");
-?>
-    <link rel="stylesheet" href= "styles/searchbooksStyles.css">
-</head>
-<body>
-  
-  <div id ="space"> </div>
-  
- 
-
-<div style="width:100%">
-  <div id="inner">
-      <form action="#" method="post">
-      <input class="bigsearch" name = "search" type="text" placeholder="enter book title or ISBN"  /> 
-      <input type="image"  src="images/search-9-64.png" width="25" height="25" alt="Submit">
-             
-       <br>
-     
+    <head>
         <?php
-        require 'dbConnection.php';
-
-        $result=mysqli_query($conn, "select campusName FROM campus");
-        $options=" ";       
-        
-        
-        // Add checkbox options
-        while($row = mysqli_fetch_array($result))
-        {
-          $options .='<input type="checkbox" name = "'.$row["campusName"].'"/>' . $row["campusName"];
-          echo $options;
-        }
-
+        require_once("navigator.php");
         ?>
+        <link rel="stylesheet" href= "styles/searchbooksStyles.css">
+    </head>
+    <body>
 
-      </form>
-  </div>
-    
-      <br>      
-      <br>
-      <ul class="books">
-   <?php
-    require 'dbConnection.php';
-    $result = NULL;
-    
-if (isset($_POST['search'])) {
-   
+        <div id ="space"> </div>
+
+
+
+        <div style="width:100%">
+            <div id="inner">
+                <form action="searchBooks.php" method="post">
+                    <input class="bigsearch" name = "search" type="text" placeholder="enter book title or ISBN"  /> 
+                    <input type="image"  src="images/search-9-64.png" width="25" height="25" alt="Submit">
+
+                    <br>
+
+                    <?php
+                    require 'dbConnection.php';
+
+                    $result = mysqli_query($conn, "select campusName FROM campus");
+                    
+
+                 
+                    // Add checkbox options
+                    while ($row = mysqli_fetch_array($result)) {
+                        $cn = $row["campusName"];
+                        $options = '<input type="checkbox" name = "campus[]" value="' . $cn . '"/>' . $cn;
+                        echo $options;
+                    }
+                    ?>
+
+                </form>
+            </div>
+
+            <br>      
+            <br>
+            <ul class="books">
+<?php
+require_once 'dbConnection.php';
+$result = NULL;
+
+if (isset($_POST['search'])|| isset($_POST['campus'])) {
+    $selected_campuses=$_POST['campus'];
+
     //get selected books from the db
     $stmt = mysqli_prepare($conn, "SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` FROM `book` inner join `seller_book`"
-            . "on book.isbn = seller_book.bookisbn" 
+            . "on book.isbn = seller_book.bookisbn"
             . " WHERE `Title` like CONCAT('%',?,'%') or  `ISBN` like CONCAT('%',?,'%')") or die(mysqli_error($conn));
+
+mysqli_prepare($conn,"SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` 
+FROM
+(SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl`, `campusID`
+ 	FROM `book` 
+		inner join `seller_book`
+                     on book.isbn = seller_book.bookisbn
+            	INNER join seller 
+                    on seller_book.SellerID = seller.userID
+            		INNER join campus 
+                            on campus.CampusID = seller.campus
+             WHERE `Title` like CONCAT('%',?,'%') or  `ISBN` like CONCAT('%',?,'%') ) as t1
+             
+             INNER join campus 
+                    on campus.CampusID = t1.campusID
+             where CampusName in ('LAS-Women', 'LAS-Men')");
+
+
     $search = $_POST['search'];
-    
+
     mysqli_stmt_bind_param($stmt, 'ss', $search, $search);
-    
-    
+
+
     mysqli_stmt_execute($stmt);
-   $result = mysqli_stmt_get_result($stmt);
-   
-    while($row = mysqli_fetch_array($result)){
-       echo '<li>
-          <a href="#">
+    $result = mysqli_stmt_get_result($stmt);
+
+    while ($row = mysqli_fetch_array($result)) {
+        if ($row['Edition'] == 0) {
+            $edition = "N/A";
+        } else {
+            $edition = $row['Edition'];
+        }
+        echo '<li>
+         
+          <figure>
          <img src="' . $row['imageurl'] . '" height =200px; width=200px;>
+              <figcaption>Edition: ' . $edition .
+        '<br>' . $row['Notes'] . '</figcaption>
+             </figure>
             <h4> Title:' . $row['Title'] . '</h4>
           <p> ISBN: ' . $row['ISBN'] . '</p>
-        </a>
+        
           <form method="post" action="buyBook.php">
-         <input type="hidden" name="seller" value='.$row["sellerID"].'>
+         <input type="hidden" name="seller" value=' . $row["sellerID"] . '>
          <input type="submit" value="Connect!" />
         </form>
       </li>';
     }
-    
-}
+} else {
+    $sql = "SELECT `sellerID`, `ISBN`, `Title`, `Author`, `Edition`, `Notes`, `imageurl` "
+            . "FROM `book` inner join seller_book on book.isbn = seller_book.bookisbn";
+    $result = mysqli_query($conn, $sql);
 
- else {
-   $sql    = "SELECT `sellerID`, `ISBN`, `Title`, `Author`, `Edition`, `Notes`, `imageurl` "
-           . "FROM `book` inner join seller_book on book.isbn = seller_book.bookisbn";
-    $result = mysqli_query($conn, $sql); 
-    
 
     if (mysqli_num_rows($result) > 0) {
+
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
-            //     echo'<li>
-            // <h2>'.$row['Title'].'</h2>
-            // <div class="body"><img src="'. $row['imageurl'].'" height =200px; width=200px;></div>
-            //  <div class="cta"><a href="">Call to action!</a></div>
-            //   </li>';
+            if ($row['Edition'] == 0) {
+                $edition = "N/A";
+            } else {
+                $edition = $row['Edition'];
+            }
+
             echo '<li>
-         
+         <figure>
          <img src="' . $row['imageurl'] . '" height =200px; width=200px;>
+              <figcaption>Edition: ' . $edition .
+            '<br>' . $row['Notes'] . '</figcaption>
+             </figure>
             <h4> Title:' . $row['Title'] . '</h4>
           <p> ISBN: ' . $row['ISBN'] . '</p>
         
           <form method="post" action="buyBook.php">
-         <input type="hidden" name="seller" value='.$row["sellerID"].'>
+         <input type="hidden" name="seller" value=' . $row["sellerID"] . '>
          <input type="submit" value="Connect!" />
         </form>
       </li>';
@@ -106,19 +135,19 @@ if (isset($_POST['search'])) {
     } else {
         echo "0 results";
     }
- }
+}
 ?>
-      </ul>
-   
-</div>
-  
- 
+            </ul>
 
-</body>
+        </div>
 
-<footer>
-    
-</footer>
+
+
+    </body>
+
+    <!--<footer>
+        
+    </footer>-->
 
 
 </html>

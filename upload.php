@@ -24,6 +24,12 @@ if (!empty($_POST)) {
 	if (strlen((string)$_POST['isbn']) !== 10 && strlen((string)$_POST['isbn']) !== 13) {
 		die(header("location:addBook.php?error=true&reason=invalid_isbn"));
 	}
+        
+if(!empty(($_POST['edition']))&& (!is_numeric($_POST['edition']) || !$_POST['edition'] > 0)){
+        die(header("location:addBook.php?error=true&reason=editionnumeric"));
+        }
+            
+        
 
 	// $target_dir = ;
 
@@ -38,8 +44,10 @@ if (!empty($_POST)) {
 
 	$uploadOk = 1;
 	$uploaded_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	$imageFileType = pathinfo($uploaded_file, PATHINFO_EXTENSION);
-	$target_file = $target_dir . $_POST['isbn'] . '.' . $imageFileType; //has file name as user sees it
+	$imageFileType = pathinfo($uploaded_file, PATHINFO_EXTENSION); 
+	$target_file = $target_dir . $_POST['isbn'].date("YmdHis").'.'. $imageFileType; //has file name as user sees it
+        
+        //user did not upload a file
 	if (empty($_FILES['fileToUpload']["tmp_name"])) {
 		$filepath = $target_dir . 'na.jpg';
 	}
@@ -107,7 +115,7 @@ if (!empty($_POST)) {
 					$filepath = $target_file;
 				}
 				else {
-					die(header("location:addBook.php?error=true&reason=error" . $filepath));
+					die(header("location:addBook.php?error=true&reason=error_move_file". $target_file));
 					echo "Sorry, there was an error uploading your file.";
 				}
 			}
@@ -168,12 +176,13 @@ mysqli_stmt_bind_param($stmt, 'is', $sellerID, $isbn);
 
 if (!mysqli_stmt_execute($stmt)) {
 	mysqli_rollback($conn);
+        die(mysqli_error($conn));
 }
 //commit to db
 mysqli_commit($conn);
 
 die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn" . $filepath));
 
-?>
+
 
 

@@ -15,6 +15,11 @@
             <div id="inner">
                 <h1>Terms and Privacy</h1>
                 <label> We like to steal your info! try us!</label>
+                <p>
+                    The username you provide will be public. 
+The contact information you provide will also be visible to users who want to initiate contact. 
+The email you use to sign up will NOT be visible to other users.
+                </p>
             </div>
             <br>
     </div>

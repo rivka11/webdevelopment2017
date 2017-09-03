@@ -8,11 +8,11 @@
             <div id="inner">
                 <form action="sendEmail.php" method="post">
             <label>Full Name:</label>
-            <input type ="text" name = "name" required="true"/>
+            <input type ="text" name = "name" required="true"/>*
             <br>
             <br>
             <label>Email address:</label>
-            <input type ="text" name = "email" required="true"/>
+            <input type ="text" name = "email" required="true"/>*
             <br>
             <br>
             <label>Reason for contact:</label>
@@ -27,7 +27,7 @@
             <br>
             <br>
                 <input type ="submit" value = "send"/>
-            
+                <label class ="info"> your name and email will not be  shared.</label>
         </form>
             </div>
             

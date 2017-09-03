@@ -24,16 +24,16 @@ else {
             <br>
             <div id="inner">
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label>ISBN-13:</label>
-            <input type ="text" name = "isbn" required="true"/>
+            <label>ISBN(10 or 13):</label>
+            <input type ="text" name = "isbn" required="true"/>*
             <br>
             <br>
             <label>Title:</label>
-            <input type ="text" name = "title"  required="true"/>
+            <input type ="text" name = "title"  required="true"/>*
             <br>
             <br>
             <label>Author:</label>
-            <input type ="text" name = "author" required="true"/>
+            <input type ="text" name = "author" required="true"/>*
             <br>
             <br>
             <label>Edition:</label>
@@ -41,7 +41,7 @@ else {
             <br>
             <br>
             <label>Notes:</label>
-            <textarea name = "notes" rows ="3" cols="50" placeholder="enter information here (ie. book condition)"></textarea>
+            <textarea  maxlength="100" name = "notes" rows ="3" cols="50" placeholder="enter information here (ie. book condition)"></textarea>
             <br>
             <br>
                       
@@ -52,11 +52,16 @@ else {
             <input type="submit" value="Add Book" name="submit">
 
         </form>
-                <label class="error"> <?php echo $rsn;?> </label>
+                <label style="color:red;" class="error"> <?php echo $rsn;?> </label>
             </div>
             <br>
     </div>
     </div>
+      
+      <div id="sidebar">
+          
+      </div>
      
 </body>
-
+<footer>
+</footer>

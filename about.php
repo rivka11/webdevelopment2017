@@ -15,6 +15,9 @@
             <div id="inner">
                 <h1>About</h1>
                 <label> We match those who have books with those who do not. It's simple!</label>
+                <p>
+                    
+                </p>
             </div>
             <br>
     </div>

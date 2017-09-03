@@ -24,8 +24,8 @@ if (session_status() != PHP_SESSION_ACTIVE){
 
 </head>
 <body>
-   <body >
-  <header>
+ 
+      <header>
       <a href="index.php">
           <img id="logo" src="images/logoburned.png" alt="logo">
       </a>
