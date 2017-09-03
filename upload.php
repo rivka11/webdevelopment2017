@@ -25,7 +25,7 @@ if (!empty($_POST)) {
 		die(header("location:addBook.php?error=true&reason=invalid_isbn"));
 	}
         
-if(!empty(($_POST['edition']))&& (!is_numeric($_POST['edition']) || !$_POST['edition'] > 0)){
+        if(!empty(($_POST['edition']))&& (!is_numeric($_POST['edition']) || !$_POST['edition'] > 0)){
         die(header("location:addBook.php?error=true&reason=editionnumeric"));
         }
             
@@ -50,7 +50,9 @@ if(!empty(($_POST['edition']))&& (!is_numeric($_POST['edition']) || !$_POST['edi
         //user did not upload a file
 	if (empty($_FILES['fileToUpload']["tmp_name"])) {
 		$filepath = $target_dir . 'na.jpg';
-	}
+            die(header("location:addBook.php?error=true&reason=issue"));
+
+   	}
 	else {
 
 		// Check if image file is a actual image or fake image
@@ -121,7 +123,7 @@ if(!empty(($_POST['edition']))&& (!is_numeric($_POST['edition']) || !$_POST['edi
 			}
 		}
 	}
-}
+
 
 // ready to insert into database:
 
@@ -135,25 +137,13 @@ include 'dbConnection.php';
 // mysqli_autocommit($conn, FALSE);
 
 mysqli_begin_transaction($conn);
-$stmt = mysqli_prepare($conn, "INSERT INTO `book` (`ISBN`, `Title`, `Author`, `Edition`, `Notes`,`imageurl`)" . " VALUES (?, ?, ?, ?, ?, ?)");
+$stmt = mysqli_prepare($conn, "INSERT INTO `book` (`ISBN`, `Title`, `Author`, `Edition`, `Notes`,`imageurl`)"
+        . " VALUES (?, ?, ?, ?, ?, ?)");
 mysqli_stmt_bind_param($stmt, 'ssssss', $isbn, $title, $author, $edition, $notes, $filepath);
 
 if (!mysqli_stmt_execute($stmt)) {
 	mysqli_rollback($conn);
 }
-
-//       $stmt = mysqli_prepare($conn, "INSERT INTO `seller`(`firstName`, `lastName`, `campus`, `userType`, `email`, `prefContact`, `contactInfo`, `userName`, `password`)
-//        VALUES (?,?,?,?,?,?,?,?,?)");
-//      mysqli_stmt_bind_param($stmt, 'ssiisisss', $isbn, $title, $author, $edition, $notes, $filepath);
-//
-//        if(mysqli_stmt_execute($stmt)){
-//         //   echo 'book added';
-//         //   echo $filepath;
-//          die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn".$filepath));
-//
-//        }else{
-//            mysqli_rollback($conn);
-//        }
 
 $email = $_SESSION['user'];
 //what happens if seller with that email doesn't exist
@@ -184,5 +174,5 @@ mysqli_commit($conn);
 die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn" . $filepath));
 
 
-
+}
 

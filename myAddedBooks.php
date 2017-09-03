@@ -13,7 +13,7 @@ $useremail = $_SESSION['user'];
  }
 ?>
     <link rel="stylesheet" href= "styles/searchbooksStyles.css">
-</head>
+   </head>
 <body>
   
  
@@ -49,7 +49,7 @@ $useremail = $_SESSION['user'];
    if(mysqli_num_rows($result)==0){
        echo '<h4>You do not have any open books.</h4>';
    }
-   echo  '<div> <ul>';
+ 
     while($row = mysqli_fetch_array($result)){
         if($row['Edition']==0){
             $edition = "N/A";
@@ -71,47 +71,28 @@ $useremail = $_SESSION['user'];
           <form method="post" action="deleteBook.php">
          <input type="hidden" name="seller" value='.$row["sellerID"].'>
          <input type="hidden" name="bookisbn" value='.$row["ISBN"].'>
+      <input type="hidden" name="imageurl" value='.$row["imageurl"].'>
          <input type="hidden" name="seller_book_id" value='.$row["Seller_BookID"].'>
-          <input type="submit" value="Remove" />
+         <input type="submit" value="Remove" />
         </form>
       </li>';
     }
     
- echo  '</ul> </div>';
-//    $result = mysqli_query($conn, $sql); 
-//    
-//
-//    if (mysqli_num_rows($result) > 0) {
-//        // output data of each row
-//        while ($row = mysqli_fetch_assoc($result)) {
-//            //     echo'<li>
-//            // <h2>'.$row['Title'].'</h2>
-//            // <div class="body"><img src="'. $row['imageurl'].'" height =200px; width=200px;></div>
-//            //  <div class="cta"><a href="">Call to action!</a></div>
-//            //   </li>';
-//            echo '<li>
-//          <a href="#">
-//         <img src="' . $row['imageurl'] . '" height =200px; width=200px;>
-//            <h4> Title:' . $row['Title'] . '</h4>
-//          <p> ISBN: ' . $row['ISBN'] . '</p>
-//        </a>
-//          <form method="post" action="buyBook.php">
-//         <input type="hidden" name="seller" value='.$row["sellerID"].'>
-//         <input type="submit" value="Connect!" />
-//        </form>
-//      </li>';
-//        }
-//    } else {
-//        echo "0 results";
-//    }
+
  
 ?>
       </ul>
-   
-</div>
-  
- 
+   <!--if javascript is not enabled cant actually remove book.....need to figure out better way!-->
+<!--      <script>
+          $(function(){
+    $('form').submit(function(){
+        if (confirm("Press a button!") === false) {
+              return false;
+}
 
+    });
+});
+          </script>-->
 </body>
 
 <footer>

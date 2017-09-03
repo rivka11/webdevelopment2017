@@ -2,6 +2,12 @@
 session_start();
 ?>
 <!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href= "styles/jquery.mThumbnailScroller.css">
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <!-- plugin script -->
+     <script type="text/javascript" src="jquery.mThumbnailScroller.js"></script>
+</head>
 <?php
 include("navigator.php"); 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] ===0) {
@@ -58,10 +64,14 @@ else {
     </div>
     </div>
       
-      <div id="sidebar">
-          
-      </div>
+<!--      <div id="sidebar">
+       <?php  // include 'footer.php';?>
+      </div>-->
      
 </body>
 <footer>
+   
+ <?php// include 'footer2.php'; ?>
+     <?php   include 'footer.php';?>
+ 
 </footer>

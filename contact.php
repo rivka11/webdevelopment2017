@@ -36,3 +36,6 @@
     </div>
  
 </body>
+<footer>
+ <?php include 'footer2.php';?>
+</footer>

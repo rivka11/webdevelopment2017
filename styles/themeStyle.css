@@ -237,8 +237,10 @@ footer{
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
+  background-color: #005f5f;
+  text-align: left;
+  color:white;
+  font-size: .8em;
 }
 
 
