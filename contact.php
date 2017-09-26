@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php include("navigator.php"); ?>
-<body>
+
       <div id ="space"> </div>
     <div style="width:100%;">
         <div id="inner" class="inner">
@@ -34,8 +34,8 @@
             <br/>
     </div>
     </div>
- 
-</body>
+
 <footer>
  <?php include 'footer2.php';?>
 </footer>
+     <?php   include 'basicFooter.php';?>

@@ -17,7 +17,7 @@ session_destroy();
 include("navigator.php");
 
 ?>
-<body>
+
       <div id ="space"> </div>   
       <div id="inner" class="inner">
           <div id="inner">
@@ -113,4 +113,4 @@ include("navigator.php");
     </div>
     </div>
 
-</body>
+     <?php   include 'basicFooter.php';?>

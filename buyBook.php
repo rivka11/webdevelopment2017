@@ -22,7 +22,7 @@ else {
 
 }
 ?>
-<body>
+
       <div id ="space"> </div>
     <div style="width:100%;">
         <div id="inner" class="inner">
@@ -45,5 +45,5 @@ else {
     </div>
     </div>
  
-</body>
+     <?php   include 'basicFooter.php';?>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php include("navigator.php"); 
 ?>
-<body>
+
    
       <div id ="space"> </div>
        <?php
@@ -11,13 +11,13 @@
     ?>
     <div style="width:100%;">
         <div id="inner" class="inner">
-            <br>
+            <br/>
             <div id="inner">
                 <h1>You must sign out to continue</h1>
                 <label> We match those who have books with those who do not. It's simple!</label>
             </div>
-            <br>
+            <br/>
     </div>
     </div>
  
-</body>
+     <?php   include 'basicFooter.php';?>

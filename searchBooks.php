@@ -7,7 +7,7 @@
         ?>
         <link rel="stylesheet" href= "styles/searchbooksStyles.css">
     </head>
-    <body>
+    
 
         <div id ="space"> </div>
 
@@ -39,8 +39,8 @@
                 </form>
             </div>
 
-            <br>      
-            <br>
+            <br/>      
+            <br/>
             <ul class="books">
 <?php
 require_once 'dbConnection.php';
@@ -141,14 +141,13 @@ FROM
 
 
 
-    </body>
+ 
 
     <!--<footer>
         
     </footer>-->
 
-
-</html>
+     <?php   include 'basicFooter.php';?>
 
 
 

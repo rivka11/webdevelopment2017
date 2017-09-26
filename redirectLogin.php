@@ -9,11 +9,11 @@ else{
     $mesg='';
 }
 ?>
-<body>
+
       <div id ="space"> </div>
     <div style="width:100%;">
         <div id="inner" class="inner">
-            <br>
+            <br/>
             <img style="display:block; margin: auto; width:25%" src="images/warning-5-128.png"/>
             <h2 style="display:inline-block; text-align: center; width: 100%"><?php echo $mesg ?></h2>
            
@@ -27,8 +27,7 @@ else{
             
         </form>
             </div>
-            <br>
+            <br/>
     </div>
     </div>
- 
-</body>
+     <?php   include 'basicFooter.php';?>

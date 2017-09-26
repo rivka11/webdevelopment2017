@@ -5,18 +5,18 @@
         <group>
             <file>file:/C:/xampp/htdocs/TextbookSite/redirectLogin.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/styles/themeStyle.css</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/signin.php</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/buyBook.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/addBook.php</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/test.html</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/deleteBook.php</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/validateNewUser.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/myAddedBooks.php</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/popuptest.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/signUp.php</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/styles/testpopupstyles.css</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/contact.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/navigator.php</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/upload.php</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/dbConnection.php</file>
             <file>file:/C:/xampp/htdocs/TextbookSite/searchBooks.php</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/about.php</file>
-            <file>file:/C:/xampp/htdocs/TextbookSite/footer2.php</file>
+            <file>file:/C:/xampp/htdocs/TextbookSite/upload.php</file>
         </group>
     </open-files>
 </project-private>

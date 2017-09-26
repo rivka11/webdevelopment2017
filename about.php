@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php include("navigator.php"); 
 ?>
-<body>
+
    
       <div id ="space"> </div>
        <?php
@@ -23,8 +23,9 @@
     </div>
     </div>
  
-</body>
+
 <footer>
-    <?php //include 'footer.php'; ?>
+    
      <?php include 'footer2.php'; ?>
  </footer>
+      <?php include 'basicFooter.php'; ?>

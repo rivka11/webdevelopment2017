@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head>
 <?php include("navigator.php"); ?>
 
-</head>
-<body>
   
   <div id ="space"> </div>
   
@@ -61,10 +57,10 @@
             <br/>
     </div>
     </div>
-</body>
 
-</body>
+
+
 <!--<footer>
-   <?php //include("footer.php"); ?>
+   <?php include("basicFooter.php"); ?>
 </footer>-->
-</html>
+

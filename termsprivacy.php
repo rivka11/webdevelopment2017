@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php include("navigator.php"); 
 ?>
-<body>
+
    
       <div id ="space"> </div>
        <?php
@@ -11,7 +11,7 @@
     ?>
     <div style="width:100%;">
         <div id="inner" class="inner">
-            <br>
+            <br/>
             <div id="inner">
                 <h1>Terms and Privacy</h1>
                 <label> We like to steal your info! try us!</label>
@@ -21,9 +21,9 @@ The contact information you provide will also be visible to users who want to in
 The email you use to sign up will NOT be visible to other users.
                 </p>
             </div>
-            <br>
+            <br/>
     </div>
     </div>
  
-</body>
+     <?php   include 'basicFooter.php';?>
 

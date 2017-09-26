@@ -71,7 +71,4 @@ if (session_status() != PHP_SESSION_ACTIVE){
 
  
     
-</body>
 
-</body>
-</html>

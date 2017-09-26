@@ -23,7 +23,7 @@ else {
  }
  }
 ?>
-<body>
+
       <div id ="space"> </div>
     <div style="width:100%;">
         <div id="inner" class="inner">
@@ -64,14 +64,13 @@ else {
     </div>
     </div>
       
-<!--      <div id="sidebar">
-       <?php  // include 'footer.php';?>
-      </div>-->
+
      
-</body>
+
 <footer>
    
  <?php// include 'footer2.php'; ?>
      <?php   include 'footer.php';?>
  
 </footer>
+       <?php   include 'basicFooter.php';?>
