@@ -21,7 +21,7 @@ include("navigator.php");
       <div id ="space"> </div>   
       <div id="inner" class="inner">
           <div id="inner">
-            <br>
+            <br/>
             <?php
             $possibleReasons = array("empty_field" => "all field must be completed", "password"=>"invalid sign in", "userexists"=>"A user with that email already exists", "invalid_phone" => "Phone should be 10 digits", "invalid_email" => "Invalid email address");
             if(isset($_GET['loginFailed'])){
@@ -33,20 +33,20 @@ include("navigator.php");
             <form action="validateNewUser.php" method = "post">
             <label>First Name:</label>
             <input name = "fname" type ="text" required/>*
-            <br>
-            <br>
+            <br/>
+            <br/>
             <label>Last Name:</label>
             <input name = "lname" type ="text" required/>*
-            <br>
-            <br>
+            <br/>
+            <br/>
             <label>Site user name:</label>
-            <input type ="text" name = "uname" required/>* (this will be public)
-            <br>
-            <br>
+            <input type ="text" name = "uname" required/>* (this will be publicly visible)
+            <br/>
+            <br/>
             <label>Email address:</label>
             <input type ="text" name = "email" required/>*
-            <br>
-            <br>
+            <br/>
+            <br/>
             <label>Preferred contact method:</label>
             <select name="prefcontact" style="width:150px">*
          <option selected disabled hidden>select one</option>
@@ -65,13 +65,13 @@ include("navigator.php");
 
         ?>
         </select>
-            <br>
-            <br>
+            <br/>
+            <br/>
              <label>Contact Info:</label>
               <input type ="text" name = "contactinfo" required/>*
        
-            <br>
-            <br>
+            <br/>
+            <br/>
             
                <label>Campus</label>
         <select class="form-dropdown" style="width:150px" id="input_5" name="campus">*
@@ -90,15 +90,15 @@ include("navigator.php");
 
             ?>
       </select>
-               <br>
-               <br>  
+               <br/>
+               <br/>  
                <label>Password</label>
       <input type="password" placeholder="Enter Password" name="psw" required>*
-      <br>
-      <br>
+      <br/>
+      <br/>
       <label>Repeat Password</label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>*
-      <br>
+      <br/>
       
       
       <p><label>By creating an account you agree to our <a href="termsprivacy.php">Terms & Privacy</a>.</label></p>
@@ -109,7 +109,7 @@ include("navigator.php");
       <input type ="submit" required value="sign up!"/>
             
         </form>
-            <br>
+            <br/>
     </div>
     </div>
 

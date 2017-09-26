@@ -65,7 +65,8 @@ $prefcontact = $_POST['prefcontact'];
 
 $contactinfo = $_POST['contactinfo'];
 $email = $_POST['email'];
-$password  = $_POST['psw'];
+$password  = password_hash($_POST['psw'], PASSWORD_DEFAULT);
+
 
 
 //get campus id

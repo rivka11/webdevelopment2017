@@ -36,7 +36,7 @@ foreach($rqrd as $field) {
     }
     $remember = $_POST['rememberMe'];
     //check if passwords are the same
-    if($passw == $pw){
+    if(password_verify($pass, $pw)){
         //successfully signed in!
         session_start(); 
          $_SESSION['user'] = $email;
