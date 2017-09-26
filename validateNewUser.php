@@ -97,7 +97,7 @@ if(mysqli_stmt_execute($sql)){
           die(header("location:myAddedBooks.php?"));
 
         }else{
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "Error: " . $sql . "<br/>" . mysqli_error($conn);
         }
 
 //    if (mysqli_query($conn, $sql)) {

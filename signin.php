@@ -1,5 +1,5 @@
 <?php
-session_set_cookie_params(0);//should destroy session when browser is closed, appears to work
+//session_set_cookie_params(0);//should destroy session when browser is closed, appears to work
 //TODO user should be signed out on browser close
 //session_start();
 ?>
@@ -19,27 +19,33 @@ else{
     ?>
     <div style="width:100%;">
         <div id="inner" class="inner">
-            <br>
+            <br/>
             <div id="inner">
                 <form method="post" action="validateUser.php">
             <label>enter email</label>
-            <input type ="text" name="email" required="true"/>*
-            <br>
-            <br>
+            <input type ="text" name="email" <?php if(isset($_COOKIE['userNameCookie'])){echo 'value ="'.$_COOKIE['userNameCookie'].'"';}?> required/>*
+         
+            <br/>
+            <br/>
             <label>enter password</label>
-            <input type ="password" name="psw" required="true"/>*
+            <input type ="password" name="psw" required/>*
             
-            <br>
-            <br>
+            <br/>
+            <br/>
             <input type ="submit" value="sign in"/>
-            
+            <input type="checkbox"  value = "remember" name="rememberMe"  /> remember me
+               
         </form>
                 <label style="color:red;">
                     <?php echo $er; ?>
                 </label>
             </div>
-            <br>
+            <br/>
+            
     </div>
     </div>
  
 </body>
+<footer>
+ <?php include 'footer2.php';?>
+</footer>

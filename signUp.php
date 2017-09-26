@@ -32,19 +32,19 @@ include("navigator.php");
             ?>
             <form action="validateNewUser.php" method = "post">
             <label>First Name:</label>
-            <input name = "fname" type ="text" required="true"/>*
+            <input name = "fname" type ="text" required/>*
             <br>
             <br>
             <label>Last Name:</label>
-            <input name = "lname" type ="text" required="true"/>*
+            <input name = "lname" type ="text" required/>*
             <br>
             <br>
             <label>Site user name:</label>
-            <input type ="text" name = "uname" required="true"/>*
+            <input type ="text" name = "uname" required/>* (this will be public)
             <br>
             <br>
             <label>Email address:</label>
-            <input type ="text" name = "email" required="true"/>*
+            <input type ="text" name = "email" required/>*
             <br>
             <br>
             <label>Preferred contact method:</label>
@@ -68,7 +68,7 @@ include("navigator.php");
             <br>
             <br>
              <label>Contact Info:</label>
-              <input type ="text" name = "contactinfo" required="true"/>*
+              <input type ="text" name = "contactinfo" required/>*
        
             <br>
             <br>
@@ -106,7 +106,7 @@ include("navigator.php");
       
       
       
-      <input type ="submit" required="true" value="sign up!"/>
+      <input type ="submit" required value="sign up!"/>
             
         </form>
             <br>

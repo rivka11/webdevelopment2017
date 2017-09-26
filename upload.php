@@ -35,7 +35,7 @@ if (!empty($_POST)) {
 
 	/***************************************************************************/
 
-	// check if file is reasonable
+	// check if uploaded file is reasonable
 	// code modified from W3 schools https://www.w3schools.com/php/php_file_upload.asp
 
 	$target_dir = "./images/books/";
@@ -50,7 +50,7 @@ if (!empty($_POST)) {
         //user did not upload a file
 	if (empty($_FILES['fileToUpload']["tmp_name"])) {
 		$filepath = $target_dir . 'na.jpg';
-            die(header("location:addBook.php?error=true&reason=issue"));
+          //  die(header("location:addBook.php?error=true&reason=issue"));
 
    	}
 	else {
@@ -137,13 +137,6 @@ include 'dbConnection.php';
 // mysqli_autocommit($conn, FALSE);
 
 mysqli_begin_transaction($conn);
-$stmt = mysqli_prepare($conn, "INSERT INTO `book` (`ISBN`, `Title`, `Author`, `Edition`, `Notes`,`imageurl`)"
-        . " VALUES (?, ?, ?, ?, ?, ?)");
-mysqli_stmt_bind_param($stmt, 'ssssss', $isbn, $title, $author, $edition, $notes, $filepath);
-
-if (!mysqli_stmt_execute($stmt)) {
-	mysqli_rollback($conn);
-}
 
 $email = $_SESSION['user'];
 //what happens if seller with that email doesn't exist
@@ -159,16 +152,16 @@ $result = mysqli_stmt_get_result($stmt);
 $row = mysqli_fetch_array($result);
 $sellerID = $row["userID"];
 
-// INSERT INTO `book`(`ISBN`, `Title`, `Author`, `Edition`, `Notes`, `imageurl`) VALUES (isbn,title,author,edition,notes,url);
 
-$stmt = mysqli_prepare($conn, "INSERT INTO `seller_book`(`SellerID`, `BookISBN`) VALUES (?,?)");
-mysqli_stmt_bind_param($stmt, 'is', $sellerID, $isbn);
+$stmt = mysqli_prepare($conn, "INSERT INTO `book` (`sellerID`,`ISBN`, `Title`, `Author`, `Edition`, `Notes`,`imageurl`)"
+        . " VALUES (?, ?, ?, ?, ?, ?, ?)");
+mysqli_stmt_bind_param($stmt, 'issssss', $sellerID, $isbn, $title, $author, $edition, $notes, $filepath);
 
 if (!mysqli_stmt_execute($stmt)) {
+    die(mysqli_error($conn));
 	mysqli_rollback($conn);
-        die(mysqli_error($conn));
 }
-//commit to db
+   //commit to db
 mysqli_commit($conn);
 
 die(header("location:confirmBookAdded.php?title=$title&author=$author&isbn=$isbn" . $filepath));

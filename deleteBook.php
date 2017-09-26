@@ -2,7 +2,7 @@
 
  require 'dbConnection.php';
     $result = NULL;
-if(!isset($_POST['seller_book_id'])){
+if(!isset($_POST['book_id'])){
     echo 'ERORR!!!!!';
     die();
 }
@@ -10,13 +10,13 @@ if(!isset($_POST['seller_book_id'])){
 $image = $_POST['imageurl'];
 
     //get selected books from the db
-    $stmt = mysqli_prepare($conn, "Delete FROM `seller_book` WHERE `Seller_BookID` =?") or die(mysqli_error($conn));
+    $stmt = mysqli_prepare($conn, "Delete FROM `book` WHERE `bookID` =?") or die(mysqli_error($conn));
    
     //for procedure call
 //    mysqli_query($connection, 
 //     "CALL StoreProcName") or die("Query fail: " . mysqli_error());
     
-    mysqli_stmt_bind_param($stmt, 'i', $_POST['seller_book_id']);
+    mysqli_stmt_bind_param($stmt, 'i', $_POST['book_id']);
     
     
    if(mysqli_stmt_execute($stmt)){

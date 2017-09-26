@@ -34,7 +34,7 @@ foreach($rqrd as $field) {
    $pw = $row['password'];
    $uname = $row['userName'];
     }
-    
+    $remember = $_POST['rememberMe'];
     //check if passwords are the same
     if($passw == $pw){
         //successfully signed in!
@@ -42,6 +42,9 @@ foreach($rqrd as $field) {
          $_SESSION['user'] = $email;
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
+         if($remember == "remember"){
+        setcookie('userNameCookie', $email, time() + (86400), "/"); //remember for a da
+         }
          die(header("location:myAddedBooks.php?loginFailed=false"));
     } else{
             die(header("location:signin.php?loginFailed=true&reason=invalidpw"));

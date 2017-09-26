@@ -46,22 +46,20 @@
 require_once 'dbConnection.php';
 $result = NULL;
 
-if (isset($_POST['search'])|| isset($_POST['campus'])) {
+if (isset($_POST['search']) && isset($_POST['campus'])) {
     $selected_campuses=$_POST['campus'];
 
     //get selected books from the db
-    $stmt = mysqli_prepare($conn, "SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` FROM `book` inner join `seller_book`"
-            . "on book.isbn = seller_book.bookisbn"
+    $stmt = mysqli_prepare($conn, "SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` FROM `book` "
+          
             . " WHERE `Title` like CONCAT('%',?,'%') or  `ISBN` like CONCAT('%',?,'%')") or die(mysqli_error($conn));
 
 mysqli_prepare($conn,"SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl` 
 FROM
 (SELECT `sellerID`, `ISBN`,`Title`,`Author`,`Edition`,`Notes`,`imageurl`, `campusID`
  	FROM `book` 
-		inner join `seller_book`
-                     on book.isbn = seller_book.bookisbn
-            	INNER join seller 
-                    on seller_book.SellerID = seller.userID
+		INNER join seller 
+                    on book.SellerID = seller.userID
             		INNER join campus 
                             on campus.CampusID = seller.campus
              WHERE `Title` like CONCAT('%',?,'%') or  `ISBN` like CONCAT('%',?,'%') ) as t1
@@ -103,7 +101,7 @@ FROM
     }
 } else {
     $sql = "SELECT `sellerID`, `ISBN`, `Title`, `Author`, `Edition`, `Notes`, `imageurl` "
-            . "FROM `book` inner join seller_book on book.isbn = seller_book.bookisbn";
+            . "FROM `book` ";
     $result = mysqli_query($conn, $sql);
 
 

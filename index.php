@@ -51,14 +51,14 @@
   
       <div style="width:100%;">
         <div id="inner" class="index">
-            <br>
+            <br/>
             <div id="inner">
                 <h1>Who are we?</h1>
-                <label> We match those who have books with those who do not. It's simple!<br> 
-                    You find a book you need and contact the owner. <br>
+                <label> We match those who have books with those who do not. It's simple!<br/> 
+                    You find a book you need and contact the owner. <br/>
                     <a href="searchBooks.php">Start browsing now!</a></label>
             </div>
-            <br>
+            <br/>
     </div>
     </div>
 </body>
