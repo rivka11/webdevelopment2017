@@ -95,9 +95,6 @@ $useremail = $_SESSION['user'];
           </script>-->
 </body>
 
-<footer>
-    
-</footer>
 
 
 </html>

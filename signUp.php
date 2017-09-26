@@ -53,13 +53,13 @@ include("navigator.php");
         <?php
         require 'dbConnection.php';
 
-        $result=mysqli_query($conn, "select methodDesc FROM contactmethods");
+        $result=mysqli_query($conn, "select methodDesc, ContactID FROM contactmethods");
      
         
         // Add options to the drop down
         while($row = mysqli_fetch_array($result))
         {
-          $menu ="<option>" . $row['methodDesc'] . "</option>";
+          $menu ="<option value = ".$row['ContactID'].">" . $row['methodDesc'] . "</option>";
           echo $menu;
         }
 
@@ -79,12 +79,12 @@ include("navigator.php");
             <?php
             require 'dbConnection.php';
 
-            $result=mysqli_query($conn, "select campusName FROM campus");
+            $result=mysqli_query($conn, "select campusName, CampusID FROM campus");
          
             // Add options to the drop down
             while($row = mysqli_fetch_array($result))
             {
-              $menu ="<option>" . $row['campusName'] . "</option>";
+              $menu ="<option value = ".$row['CampusID'].">" . $row['campusName'] . "</option>";
               echo $menu;
             }
 

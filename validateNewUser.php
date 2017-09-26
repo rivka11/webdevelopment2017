@@ -87,7 +87,10 @@ $contactID = mysqli_query($conn, $sql);
 $sql = mysqli_prepare($conn,"INSERT INTO `seller` (`firstName`, `lastName`, `campus`, `userType`, `email`, `prefContact`, `contactInfo`, `userName`, `password`) 
         VALUES (?,?,?,?,?,?,?,?,?)");
 $one =1;
-mysqli_stmt_bind_param($sql, 'ssiisisss',$fname, $lname, $one, $one, $email, $one, $contactinfo, $uname, $password);
+$campusint = (int)$campus;
+$prefcint = (int)$prefcontact;
+
+mysqli_stmt_bind_param($sql, 'ssiisisss',$fname, $lname, $campusint, $one, $email, $prefcint, $contactinfo, $uname, $password);
 
 
 if(mysqli_stmt_execute($sql)){
