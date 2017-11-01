@@ -36,18 +36,20 @@ foreach($rqrd as $field) {
     }
     $remember = $_POST['rememberMe'];
     //check if passwords are the same
-    if(password_verify($pass, $pw)){
+    if(password_verify($passw, $pw)){
         //successfully signed in!
         session_start(); 
          $_SESSION['user'] = $email;
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
          if($remember == "remember"){
-        setcookie('userNameCookie', $email, time() + (86400), "/"); //remember for a da
+        setcookie('userNameCookie', $email, time() + (86400), "/"); //remember for a day
          }
          die(header("location:myAddedBooks.php?loginFailed=false"));
-    } else{
-            die(header("location:signin.php?loginFailed=true&reason=invalidpw"));
+    } 
+    
+    else{
+            die(header("location:signin.php?loginFailed=true&reason=invalid_pw"));
     }
 
     }

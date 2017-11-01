@@ -60,7 +60,7 @@
 
 
 
-<!--<footer>
-   <?php include("basicFooter.php"); ?>
-</footer>-->
+
+   <?php include("basicFooter.php"); 
+
 

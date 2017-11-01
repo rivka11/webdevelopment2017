@@ -51,7 +51,7 @@ include("navigator.php");
             <select name="prefcontact" style="width:150px">*
          <option selected disabled hidden>select one</option>
         <?php
-        require 'dbConnection.php';
+        require_once 'dbConnection.php';
 
         $result=mysqli_query($conn, "select methodDesc, ContactID FROM contactmethods");
      
