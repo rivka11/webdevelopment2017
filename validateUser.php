@@ -38,7 +38,7 @@ foreach($rqrd as $field) {
     //check if passwords are the same
     if(password_verify($passw, $pw)){
         //successfully signed in!
-        session_start(); 
+        //session_start(); 
          $_SESSION['user'] = $email;
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
@@ -54,7 +54,7 @@ foreach($rqrd as $field) {
 
     }
 else{
-    session_start(); 
+   // session_start(); 
     $_SESSION['loggedIn'] =0;
      die(header("location:signin.php?loginFailed=true&reason=error"));
 }

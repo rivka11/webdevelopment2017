@@ -1,15 +1,5 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href= "styles/jquery.mThumbnailScroller.css">
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-     <!-- plugin script -->
-     <script type="text/javascript" src="jquery.mThumbnailScroller.js"></script>
-</head>
-<?php
-include("navigator.php"); 
+<?php include("navigator.php"); 
+
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] ===0) {
    // not logged in
     die(header("location:redirectLogin.php?login=false&reason=not_logged_in"));
@@ -23,6 +13,12 @@ else {
  }
  }
 ?>
+<head>
+    <link rel="stylesheet" href= "styles/jquery.mThumbnailScroller.css">
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <!-- plugin script -->
+     <script type="text/javascript" src="jquery.mThumbnailScroller.js"></script>
+</head>
 
       <div id ="space"> </div>
     <div style="width:100%;">

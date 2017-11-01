@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<?php  
-session_start();
+<?php include("navigator.php"); 
+
+
 if(isset($_SESSION['loggedIn'])){
     //already signed in Cant sign up!
     
@@ -13,8 +13,6 @@ session_unset();
 session_destroy();
 
 }
-
-include("navigator.php");
 
 ?>
 

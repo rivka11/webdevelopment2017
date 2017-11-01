@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<?php include("navigator.php"); ?>
+<?php include 'navigator.php"';
+include 'closeBuffer.php';
+?>
 
       <div id ="space"> </div>
     <div style="width:100%;">

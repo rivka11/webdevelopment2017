@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php include("navigator.php"); 
 if(isset($_GET['reason'])){
     if($_GET['reason']=='not_logged_in'){

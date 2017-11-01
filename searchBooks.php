@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <?php
+<?php
         require_once("navigator.php");
         ?>
+<html>
+    <head>
+       
         <link rel="stylesheet" href= "styles/searchbooksStyles.css">
     </head>
 

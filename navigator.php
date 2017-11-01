@@ -1,10 +1,11 @@
 <?php
 if (session_status() != PHP_SESSION_ACTIVE){
     session_start();
+    ob_start();
 }
 
 ?>
-    <!DOCTYPE html>
+
 <html>
 <head> 
     <title>Touro Textbook Gemach</title>
@@ -62,7 +63,7 @@ if (session_status() != PHP_SESSION_ACTIVE){
 //            echo '<li id = "navli"><a href="myAddedBooks.php">My Books</a></li>';
         }
         else{
-            echo '<li id = "navli"><a href="signIn.php">Sign in</a></li>';
+            echo '<li id = "navli"><a href="signin.php">Sign in</a></li>';
         }
         ?>
          <li id = "navli"><a href="addBook.php">Add Book</a></li>

@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-
-
 <?php include("navigator.php"); ?>
 
  

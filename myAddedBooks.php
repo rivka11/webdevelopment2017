@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head>
 <?php
 include("navigator.php"); 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] ===0 || !isset($_SESSION['user'])) {
@@ -12,6 +8,10 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] ===0 || !isset($_SESS
 $useremail = $_SESSION['user'];
  }
 ?>
+
+<html>
+<head>
+
     <link rel="stylesheet" href= "styles/searchbooksStyles.css">
    </head>
 <body>
