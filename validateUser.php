@@ -38,23 +38,23 @@ foreach($rqrd as $field) {
     //check if passwords are the same
     if(password_verify($passw, $pw)){
         //successfully signed in!
-        //session_start(); 
+        session_start(); 
          $_SESSION['user'] = $email;
          $_SESSION['loggedIn'] =1;
          $_SESSION['username'] = $uname;
          if($remember == "remember"){
         setcookie('userNameCookie', $email, time() + (86400), "/"); //remember for a day
-         }
+        }
          die(header("location:myAddedBooks.php?loginFailed=false"));
     } 
     
     else{
-            die(header("location:signin.php?loginFailed=true&reason=invalid_pw"));
+       die(header("location:signin.php?loginFailed=true&reason=invalid_pw"));
     }
 
     }
 else{
    // session_start(); 
-    $_SESSION['loggedIn'] =0;
+    $_SESSION['loggedIn'] = 0;
      die(header("location:signin.php?loginFailed=true&reason=error"));
 }

@@ -50,4 +50,4 @@ else{
 <footer>
  <?php include 'footer2.php';?>
 </footer>
- <?php   include 'basicFooter.php';?>
+ <?php include 'basicFooter.php';?>

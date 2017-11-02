@@ -1,12 +1,15 @@
 <?php
-include("navigator.php"); 
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] ===0 || !isset($_SESSION['user'])) {
+include'navigator.php'; 
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === 0 || !isset($_SESSION['user'])) {
    // not logged in
     die(header("location:redirectLogin.php?login=false&reason=not_logged_in"));
  } else {
        //logged in 
 $useremail = $_SESSION['user'];
  }
+ 
+ include 'closeBuffer.php';
 ?>
 
 <html>

@@ -40,9 +40,9 @@
             GET IN TOUCH
             </div>
     </a>
-    <br>
-    <br>
-    <br>
+    <br/>
+    <br/>
+    <br/>
   
       <div style="width:100%;">
         <div id="inner" class="index">

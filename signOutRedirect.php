@@ -19,4 +19,4 @@
     </div>
     </div>
  
-     <?php   include 'basicFooter.php';?>
+     <?php include 'basicFooter.php';?>
